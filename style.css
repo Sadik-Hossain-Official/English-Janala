@@ -3,15 +3,7 @@
   font-family: "Hind Siliguri", sans-serif;
 }
 
-.poppins
+*
 {
   font-family: "Poppins", sans-serif;
 }
-
-.menuTransition
-{
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
-}
-
-
