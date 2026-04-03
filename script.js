@@ -24,6 +24,11 @@ function loadSpinner(status)
         document.getElementById("word-container").classList.remove("opacity-0");
     }
 }
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 async function loadWordDetails(id) //using async-await;
 {
     const url=`https://openapi.programming-hero.com/api/word/${id}`;
@@ -106,7 +111,7 @@ function displayCard(words)
                             <p class="hind-siliguri font-semibold text-lg">"${word.meaning?word.meaning:"শব্দ পাওয়া যায় নি"} /${word.pronunciation?word.pronunciation:"শব্দ পাওয়া যায় নি"}"</p>
                             <div class="flex justify-around">
                                 <button onclick="loadWordDetails(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-circle-info"></i></button>
-                                <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-volume-high"></i></button>
+                                <button onclick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-volume-high"></i></button>
                             </div>
                         </div>`
         wordContainer.appendChild(card);
