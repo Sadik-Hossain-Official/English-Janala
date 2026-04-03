@@ -20,6 +20,10 @@ async function loadWordDetails(id) //using async-await;
     const data= await res.json();
     displayWordDetails(data.data);
 }
+function synonymDiv(synonym)
+{
+    return synonym.map(el=>`<span class="btn">${el}</span>`).join(" ");
+}
 function displayWordDetails(details)
 {
     console.log(details);
@@ -39,9 +43,9 @@ function displayWordDetails(details)
                     </div>
                     <div>
                         <h5 class="text-lg font-bold hind-siliguri">সমার্থক শব্দ গুলো</h5>
-                        <span class="btn">${details.synonyms[0]}</span>
-                        <span class="btn">${details.synonyms[1]}</span>
-                        <span class="btn">${details.synonyms[2]}</span>
+                        <!-- <span class="btn">${details.synonyms[0]}</span>
+                        <span class="btn">${details.synonyms[1]}</span> -->
+                        <div>${synonymDiv(details.synonyms)}</div>
                     </div>
                     <div class="modal-action">
                     <form method="dialog">
