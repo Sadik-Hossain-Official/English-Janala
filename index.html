@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>English Janala</title>
+    <!-- favicon-->
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <!--Style Sheet added-->
     <link rel="stylesheet" href="style.css" type="text/css">
     <!-- Tailwind & Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- font awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <!-- google font add -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <nav class="bg-sky-100 flex justify-between items-center px-8 shadow-md">
+            <div class="left_div">
+                <a href="#" class="flex items-center gap-1">
+                <span class="poppins font-semibold">English</span>
+                <img src="assets/logo.png" alt="icon">
+                <span class="poppins font-semibold">Janala</span>
+                </a>
+            </div>
+
+            <div class="right_div hidden md:inline">
+                <ul class="flex gap-6">
+                    <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+                    <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-book-open"></i> Learn</a></li>
+                    <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-right-from-bracket"></i>LogOut</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
 
     <!-- JavaScript added -->
     <script src="script.js"></script>
