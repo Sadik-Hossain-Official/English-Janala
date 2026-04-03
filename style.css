@@ -7,3 +7,8 @@
 {
   font-family: "Poppins", sans-serif;
 }
+.active
+{
+  color: white;
+  background-color: rgba(2, 132, 199, 1);
+}

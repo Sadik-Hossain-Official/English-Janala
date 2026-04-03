@@ -47,14 +47,14 @@
     </header>
     <main class="w-11/12 mx-auto">
         <!-- Banner section -->
-        <section class="border banner flex flex-col-reverse md:flex-row items-center">
+        <section class=" banner flex flex-col-reverse md:flex-row items-center">
             <div class="bannerInfo text-center md:text-left flex-1">
                 <h3 class="font-bold text-5xl mb-4"><span class="text-sky-500 font-bold">English</span> is Easy!!</h3>
                 <p class="hind-siliguri mb-4 font-medium text-2xl">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
                 <form action="" class="">
                 <input type="text" name="Name" id="Name" class="mb-4"><br>
                 <input type="password" name="Password" id="Password" class="mb-4"><br>
-                <input type="submit" value="Get Started" class="bg-blue-800 py-2 px-4 rounded text-white font-medium active:shadow-2xl">
+                <input type="submit" value="Get Started" class="bg-blue-800 py-2 px-4 rounded text-white font-medium active:shadow-2xl btn hover:bg-blue-700">
                 </form>
             </div>
             <div class="bannerImage flex-1">
@@ -63,10 +63,47 @@
         </section>
         <!-- Lesson section -->
          <section class="lesson mt-10 border">
+                <!-- lesson section heading -->
             <h3 class="font-bold text-center text-5xl mb-4"><span class="text-sky-500 font-bold">Let's</span> Learn Vocabularies</h3>
-
+                <!-- lesson number buttons -->
             <div id="level-container" class=" flex flex-wrap justify-center gap-4">
             </div>
+                <!-- lesson cards -->
+            <div id="word-container" class="bg-gray-100 p-5 my-15 rounded-xl grid grid-cols-3 gap-5">
+                <!-- <div class="bg-white rounded-xl text-center py-10 shadow-lg">
+                            <h5 class="font-bold text-2xl">Eager</h5>
+                            <p class="font-light text-sm my-2">Meaning/pronounciation</p>
+                            <p class="hind-siliguri font-semibold text-lg">"আগ্রহী / ইগার"</p>
+                            <div class="flex justify-around">
+                                <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-circle-info"></i></button>
+                                <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-volume-high"></i></button>
+                            </div>
+                </div> -->
+                <div id="defaultMessage" class="text-center col-span-full">
+                    <p class="hind-siliguri text-xl">আপনি এখনো কোন Lesson Select করেন নি</p>
+                    <p class="hind-siliguri font-medium text-4xl">একটি Lesson Select করুন।</p>
+                </div>
+                <!-- <div id="noContentMessage" class="text-center col-span-full">
+                    <img src="assets/alert-error.png" alt="" class="mx-auto">
+                    <p class="hind-siliguri text-xl">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                    <p class="hind-siliguri font-medium text-6xl">নেক্সট Lesson এ যান</p>
+                </div> -->
+            </div>
+
+            <!-- Open the modal using ID.showModal() method -->
+                    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold">Hello!</h3>
+                    <p class="py-4">Press ESC key or click the button below to close</p>
+                    <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                    </div>
+                </div>
+                </dialog>
          </section>
 
     </main>
