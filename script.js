@@ -11,6 +11,45 @@ hamburger.addEventListener("click",()=>{
 })
 
 // Lesson section functionality
+async function loadWordDetails(id) //using async-await;
+{
+    const url=`https://openapi.programming-hero.com/api/word/${id}`;
+    // console.log(url);
+    // fetch(url).then(res=>res.json()).then(data=>console.log(data));
+    const res= await fetch(url);
+    const data= await res.json();
+    displayWordDetails(data.data);
+}
+function displayWordDetails(details)
+{
+    console.log(details);
+    const modal=document.getElementById("my_modal_5");
+    modal.showModal();
+    document.getElementById("detail_modal").innerHTML=`
+                    <div>
+                        <h4 class="text-lg font-bold">${details.word}(<i class="fa-solid fa-microphone-lines"></i> :<span class="hind-siliguri">${details.pronunciation}</span>)</h4>
+                    </div>
+                    <div>
+                        <h5 class="text-lg font-bold">Meaning</h5>
+                        <p class="py-4 hind-siliguri">${details.meaning}</p>
+                    </div>
+                    <div>
+                        <h5 class="text-lg font-bold">Example</h5>
+                        <p class="py-4">${details.sentence}</p>
+                    </div>
+                    <div>
+                        <h5 class="text-lg font-bold hind-siliguri">সমার্থক শব্দ গুলো</h5>
+                        <span class="btn">${details.synonyms[0]}</span>
+                        <span class="btn">${details.synonyms[1]}</span>
+                        <span class="btn">${details.synonyms[2]}</span>
+                    </div>
+                    <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                    </div>`;
+}
 function removeButton()
 {
     const removeButton=document.querySelectorAll(".rmvBtn");
@@ -48,7 +87,7 @@ function displayCard(words)
                             <p class="font-light text-sm my-2">Meaning/pronounciation</p>
                             <p class="hind-siliguri font-semibold text-lg">"${word.meaning?word.meaning:"শব্দ পাওয়া যায় নি"} /${word.pronunciation?word.pronunciation:"শব্দ পাওয়া যায় নি"}"</p>
                             <div class="flex justify-around">
-                                <button onclick="my_modal_5.showModal()" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-circle-info"></i></button>
+                                <button onclick="loadWordDetails(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-circle-info"></i></button>
                                 <button class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-volume-high"></i></button>
                             </div>
                         </div>`

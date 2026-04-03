@@ -69,7 +69,7 @@
             <div id="level-container" class=" flex flex-wrap justify-center gap-4">
             </div>
                 <!-- lesson cards -->
-            <div id="word-container" class="bg-gray-100 p-5 my-15 rounded-xl grid grid-cols-3 gap-5">
+            <div id="word-container" class="bg-gray-100 p-5 my-15 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-5">
                 <!-- <div class="bg-white rounded-xl text-center py-10 shadow-lg">
                             <h5 class="font-bold text-2xl">Eager</h5>
                             <p class="font-light text-sm my-2">Meaning/pronounciation</p>
@@ -93,15 +93,8 @@
             <!-- Open the modal using ID.showModal() method -->
                     <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
                 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="text-lg font-bold">Hello!</h3>
-                    <p class="py-4">Press ESC key or click the button below to close</p>
-                    <div class="modal-action">
-                    <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn">Close</button>
-                    </form>
-                    </div>
+                <div id="detail_modal" class="modal-box space-y-4">
+                     
                 </div>
                 </dialog>
          </section>
