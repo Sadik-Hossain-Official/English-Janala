@@ -20,7 +20,7 @@
 </head>
 <body>
     <header>
-        <nav class="bg-sky-100 flex justify-between items-center px-8 shadow-md">
+        <nav class="bg-sky-100 flex justify-between items-center px-8 shadow-md ">
             <div class="left_div">
                 <a href="#" class="flex items-center gap-1">
                 <span class="poppins font-semibold">English</span>
@@ -29,16 +29,27 @@
                 </a>
             </div>
 
-            <div class="right_div hidden md:inline">
-                <ul class="flex gap-6">
+            <div class="right_div flex justify-center w-[30%] relative items-center">
+                <div id="menu" class=" hidden md:block absolute md:static top-full right-0 mt-8 md:mt-0">
+                    <ul  class="flex flex-col md:flex-row gap-6">
                     <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
                     <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-book-open"></i> Learn</a></li>
                     <li><a href="#" class="border-2 rounded-xl font-semibold px-3 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white"><i class="fa-solid fa-right-from-bracket"></i>LogOut</a></li>
-                </ul>
-
+                    </ul>
+                </div>
+                <div id="hamburger" class="flex flex-col gap-1 cursor-pointer absolute right-0 md:hidden">
+                    <div id="bar1" class="bg-sky-800 w-8 h-2 rounded-lg"></div>
+                    <div id="bar2" class="bg-sky-800 w-8 h-2 rounded-lg"></div>
+                    <div id="bar3" class="bg-sky-800 w-8 h-2 rounded-lg"></div>
+                </div>
             </div>
         </nav>
     </header>
+    <main>
+
+
+        
+    </main>
 
     <!-- JavaScript added -->
     <script src="script.js"></script>
