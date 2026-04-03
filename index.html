@@ -68,6 +68,15 @@
                 <!-- lesson number buttons -->
             <div id="level-container" class=" flex flex-wrap justify-center gap-4">
             </div>
+            <!-- spinner -->
+            <div id="spinner" class="flex justify-center items-center py-5 opacity-0">
+                <span class="loading loading-spinner loading-xl"></span>
+            </div>
+            <!-- Search bar for words -->
+             <div id="search" class="flex justify-center items-center">
+                <input type="text" id="searchWord" placeholder="Search words here" class="p-2">
+                <input type="submit" value="Search" id="searchBtn" class="btn btn-primary join-item">
+             </div>
                 <!-- lesson cards -->
             <div id="word-container" class="bg-gray-100 p-5 my-15 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-5">
                 <!-- <div class="bg-white rounded-xl text-center py-10 shadow-lg">
@@ -98,11 +107,14 @@
                 </div>
                 </dialog>
          </section>
+         <!-- FAQ section -->
+          <section id="FAQ">
+
+          </section>
 
     </main>
 
     <!-- JavaScript added -->
     <script src="script.js"></script>
-    <script src="array.js"></script>
 </body>
 </html>

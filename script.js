@@ -11,6 +11,19 @@ hamburger.addEventListener("click",()=>{
 })
 
 // Lesson section functionality
+function loadSpinner(status)
+{
+    if(status===true)
+    {
+        document.getElementById("spinner").classList.remove("opacity-0");
+        document.getElementById("word-container").classList.add("opacity-0");
+    }
+    else
+    {
+        document.getElementById("spinner").classList.add("opacity-0");
+        document.getElementById("word-container").classList.remove("opacity-0");
+    }
+}
 async function loadWordDetails(id) //using async-await;
 {
     const url=`https://openapi.programming-hero.com/api/word/${id}`;
@@ -22,7 +35,7 @@ async function loadWordDetails(id) //using async-await;
 }
 function synonymDiv(synonym)
 {
-    return synonym.map(el=>`<span class="btn">${el}</span>`).join(" ");
+    return(synonym.map(el=>`<span class="btn">${el}</span>`).join(" "));
 }
 function displayWordDetails(details)
 {
@@ -62,6 +75,7 @@ function removeButton()
 
 function loadLevelWords(id)
 {
+    loadSpinner(true);
     const url=`https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url).then(res=>res.json()).then(data=>{
         const buttonNo=document.getElementById(`buttonNo-${id}`);
@@ -97,6 +111,7 @@ function displayCard(words)
                         </div>`
         wordContainer.appendChild(card);
     })
+    loadSpinner(false);
 }
 function displayLesson(lessons)
 {
@@ -105,7 +120,7 @@ function displayLesson(lessons)
     for(let lesson of lessons) //this could be done by using forEach() method.
     {   
         const btnDiv=document.createElement("div");
-        btnDiv.innerHTML=`<button id="buttonNo-${lesson.level_no}" onclick="loadLevelWords(${lesson.level_no})" class="border-2 rounded-xl font-semibold px-2 py-1 text-center text-blue-800 items-center hover:bg-sky-600 hover:text-white hover:border-white active:shadow-lg rmvBtn"><i class="fa-solid fa-book-open"></i> Lesson-${lesson.level_no}</button>`;
+        btnDiv.innerHTML=`<button id="buttonNo-${lesson.level_no}" onclick="loadLevelWords(${lesson.level_no})" class="border-2 rounded-xl font-semibold px-2 py-1 text-center text-blue-800 items-center hover:border-white hover:shadow-lg rmvBtn"><i class="fa-solid fa-book-open"></i> Lesson-${lesson.level_no}</button>`;
         lessonContainer.appendChild(btnDiv);
     }
 }
@@ -117,3 +132,20 @@ function loadLessons()
 }
 
 loadLessons();
+
+document.getElementById("searchBtn").addEventListener("click",()=>{
+
+    removeButton();
+    const input=document.getElementById("searchWord");
+    const searchValue=input.value.trim().toLowerCase();
+    console.log(searchValue);
+    loadSpinner(true);
+    fetch("https://openapi.programming-hero.com/api/words/all").then(res=>res.json())
+    .then(data=>{
+        const allWords=data.data;
+        const filterWords= allWords.filter(word=>word.word.toLowerCase().includes(searchValue));
+        console.log(filterWords);
+        displayCard(filterWords);
+    });
+
+});
